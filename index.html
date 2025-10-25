@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PandochkaOS</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Orbitron',sans-serif; background:#0b0c10; color:#c5c6c7; }
     a { text-decoration:none; color:#66fcf1; }
-
     header {
       min-height:100vh; display:flex; flex-direction:column;
       justify-content:center; align-items:center; text-align:center;
-      background: radial-gradient(circle at top left, #0b0c10, #1f2833); overflow:hidden;
-      position:relative;
-      padding: 0 20px;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      overflow:hidden; position:relative; padding:0 20px;
     }
-
     header h1 { font-size:4rem; color:#45a29e; text-shadow:2px 2px 8px #000; margin-bottom:20px; }
     header p { font-size:1.5rem; max-width:600px; margin-bottom:30px; }
-    .btn { padding:15px 40px; border:2px solid #66fcf1; border-radius:8px; font-weight:bold; transition:.3s; }
+    .btn {
+      padding:15px 40px; border:2px solid #66fcf1; border-radius:8px;
+      font-weight:bold; transition:.3s; color:#66fcf1; background:transparent;
+      cursor:pointer;
+    }
     .btn:hover { background:#66fcf1; color:#0b0c10; }
 
     .ascii-dragon {
@@ -79,12 +80,12 @@
 ⠀⠀⠀⣷⣄⡀⠀⠀⠀⢀⣴⡟⠿⠃⠀⠀
 ⠀⠀⠀⢻⣿⣿⠉⠉⢹⣿⣿⠁⠀⠀⠀⠀
 ⠀⠀⠀⠀⠉⠁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀<br>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
     </div>
     <h1>PandochkaOS</h1>
     <p>Lightweight Kali-based pentesting OS with Fern WiFi Cracker, Metasploit, Hping3, and a fully customizable GUI.</p>
-    <!-- Download Button -->
-    <a class="btn" href="pandochkaOS.iso" download>PandochkaOS ISO Download</a>
+
+    <!-- Direct Internet Archive Download Button -->
+    <a class="btn" href="https://archive.org/download/pandochkaOS/pandochkaOS.iso" download>PandochkaOS ISO Download</a>
   </header>
 
   <!-- Features -->
@@ -132,7 +133,6 @@
       'System ready! Welcome, Hacker.'
     ];
     let index = 0;
-
     function typeMessage() {
       if(index >= messages.length) return;
       let message = messages[index];
