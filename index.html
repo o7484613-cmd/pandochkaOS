@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PandochkaOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Orbitron',sans-serif; background:#0b0c10; color:#c5c6c7; }
+    a { text-decoration:none; color:#66fcf1; }
+
+    header {
+      min-height:100vh; display:flex; flex-direction:column;
+      justify-content:center; align-items:center; text-align:center;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833); overflow:hidden;
+      position:relative;
+      padding: 0 20px;
+    }
+
+    header h1 { font-size:4rem; color:#45a29e; text-shadow:2px 2px 8px #000; margin-bottom:20px; }
+    header p { font-size:1.5rem; max-width:600px; margin-bottom:30px; }
+    .btn { padding:15px 40px; border:2px solid #66fcf1; border-radius:8px; font-weight:bold; transition:.3s; }
+    .btn:hover { background:#66fcf1; color:#0b0c10; }
+
+    .ascii-dragon {
+      font-family: monospace;
+      color:#66fcf1;
+      white-space:pre;
+      animation: float 3s ease-in-out infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    section { padding:80px 20px; }
+    section h2 { text-align:center; margin-bottom:40px; color:#45a29e; font-size:2.5rem; }
+
+    .features { display:flex; flex-wrap:wrap; justify-content:center; background:#1f2833; }
+    .feature {
+      flex:1 1 300px; margin:20px; background:#0b0c10; padding:30px;
+      border-radius:12px; text-align:center; box-shadow:0 0 20px rgba(0,0,0,0.5);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .feature:hover { transform:translateY(-10px); box-shadow:0 0 30px #66fcf1; }
+    .feature p { font-size:1rem; line-height:1.5; }
+
+    .tools { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding:20px; background:#0b0c10; }
+    .tool {
+      min-width:200px; margin:10px; padding:20px; background:#1f2833; border-radius:10px;
+      text-align:center; scroll-snap-align:start; transition:transform .3s;
+    }
+    .tool:hover { transform:scale(1.1); }
+    .tool h3 { color:#45a29e; margin-bottom:10px; }
+
+    .terminal {
+      background:#1f2833; border-radius:12px; padding:30px;
+      font-family: monospace; color:#66fcf1; max-width:800px; margin:40px auto;
+      overflow-x:auto;
+    }
+
+    footer { text-align:center; padding:40px 20px; background:#0b0c10; font-size:.9rem; color:#c5c6c7; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <div class="ascii-dragon">⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢰⣿⡿⠗⠀⠠⠄⡀⠀⠀⠀⠀  
+⠀⠀⠀⠀⡜⠁⠀⠀⠀⠀⠀⠈⠑⢶⣶⡄ 
+⢀⣶⣦⣸⠀⢼⣟⡇⠀⠀⢀⣀⠀⠘⡿⠃
+⠀⢿⣿⣿⣄⠒⠀⠠⢶⡂⢫⣿⢇⢀⠃⠀
+⠀⠈⠻⣿⣿⣿⣶⣤⣀⣀⣀⣂⡠⠊⠀⠀
+⠀⠀⠀⠃⠀⠀⠉⠙⠛⠿⣿⣿⣧⠀⠀⠀
+⠀⠀⠘⡀⠀⠀⠀⠀⠀⠀⠘⣿⣿⡇⠀⠀
+⠀⠀⠀⣷⣄⡀⠀⠀⠀⢀⣴⡟⠿⠃⠀⠀
+⠀⠀⠀⢻⣿⣿⠉⠉⢹⣿⣿⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠉⠁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀<br>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+    </div>
+    <h1>PandochkaOS</h1>
+    <p>Lightweight Kali-based pentesting OS with Fern WiFi Cracker, Metasploit, Hping3, and a fully customizable GUI.</p>
+    <!-- Download Button -->
+    <a class="btn" href="pandochkaOS.iso" download>PandochkaOS ISO Download</a>
+  </header>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Features</h2>
+    <div class="feature"><h3>Lightweight</h3><p>Optimized for speed and efficiency while packing essential pentesting tools.</p></div>
+    <div class="feature"><h3>Customizable</h3><p>Change wallpapers, icons, themes, and even ASCII dragons!</p></div>
+    <div class="feature"><h3>Powerful Tools</h3><p>Fern WiFi Cracker, Metasploit Framework, Hping3, and more.</p></div>
+  </section>
+
+  <!-- Tool Carousel -->
+  <section>
+    <h2>Included Tools</h2>
+    <div class="tools">
+      <div class="tool"><h3>Fern WiFi Cracker</h3></div>
+      <div class="tool"><h3>Metasploit</h3></div>
+      <div class="tool"><h3>Hping3</h3></div>
+      <div class="tool"><h3>Nmap</h3></div>
+      <div class="tool"><h3>Netcat</h3></div>
+      <div class="tool"><h3>Wireshark</h3></div>
+      <div class="tool"><h3>Aircrack-ng</h3></div>
+      <div class="tool"><h3>John the Ripper</h3></div>
+    </div>
+  </section>
+
+  <!-- Terminal-style ASCII -->
+  <section>
+    <h2>Welcome Terminal</h2>
+    <div class="terminal" id="terminal"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 PandochkaOS | Made with ❤️ by the PandochkaOS Team | 
+    <a href="#">GitHub</a> | <a href="#">Discord</a>
+  </footer>
+
+  <script>
+    // ASCII Terminal Animation
+    const terminal = document.getElementById('terminal');
+    const messages = [
+      'Initializing PandochkaOS...',
+      'Loading pentesting tools: Fern, Metasploit, Hping3...',
+      'Customizing GUI settings...',
+      'System ready! Welcome, Hacker.'
+    ];
+    let index = 0;
+
+    function typeMessage() {
+      if(index >= messages.length) return;
+      let message = messages[index];
+      let i = 0;
+      const interval = setInterval(() => {
+        terminal.textContent += message[i];
+        i++;
+        if(i >= message.length) {
+          clearInterval(interval);
+          terminal.textContent += '\n';
+          index++;
+          setTimeout(typeMessage, 500);
+        }
+      }, 50);
+    }
+    typeMessage();
+
+    // Auto-scroll tools
+    const tools = document.querySelector('.tools');
+    let scrollAmount = 0;
+    function autoScroll() {
+      scrollAmount += 1;
+      if(scrollAmount >= tools.scrollWidth - tools.clientWidth) scrollAmount = 0;
+      tools.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+    setInterval(autoScroll, 50);
+  </script>
+
+</body>
+</html>
