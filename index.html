@@ -7,26 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Orbitron',sans-serif; background:#0b0c10; color:#c5c6c7; }
-    a { text-decoration:none; color:#66fcf1; }
+    body { font-family:'Orbitron',sans-serif; background:#1a0000; color:#ff7518; transition: all 0.5s; }
+    a { text-decoration:none; color:#ff7518; }
     header {
       min-height:100vh; display:flex; flex-direction:column;
       justify-content:center; align-items:center; text-align:center;
-      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      background: radial-gradient(circle at top left, #1a0000, #330000);
       overflow:hidden; position:relative; padding:0 20px;
+      transition: background 0.5s;
     }
-    header h1 { font-size:4rem; color:#45a29e; text-shadow:2px 2px 8px #000; margin-bottom:20px; }
-    header p { font-size:1.5rem; max-width:600px; margin-bottom:30px; }
-    .btn {
-      padding:15px 40px; border:2px solid #66fcf1; border-radius:8px;
-      font-weight:bold; transition:.3s; color:#66fcf1; background:transparent;
-      cursor:pointer;
-    }
-    .btn:hover { background:#66fcf1; color:#0b0c10; }
-
-    .ascii-dragon {
+    header .ascii-dragon {
       font-family: monospace;
-      color:#66fcf1;
+      color:#ff7518;
       white-space:pre;
       animation: float 3s ease-in-out infinite;
       margin-bottom: 20px;
@@ -35,40 +27,73 @@
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-
+    
     section { padding:80px 20px; }
-    section h2 { text-align:center; margin-bottom:40px; color:#45a29e; font-size:2.5rem; }
-
-    .features { display:flex; flex-wrap:wrap; justify-content:center; background:#1f2833; }
+    
+    .features { display:flex; flex-wrap:wrap; justify-content:center; background:#330000; transition: background 0.5s; }
     .feature {
-      flex:1 1 300px; margin:20px; background:#0b0c10; padding:30px;
-      border-radius:12px; text-align:center; box-shadow:0 0 20px rgba(0,0,0,0.5);
-      transition: transform .3s, box-shadow .3s;
+      flex:1 1 300px; margin:20px; background:#330000; padding:30px;
+      border-radius:12px; text-align:center; box-shadow:0 0 10px rgba(255,117,24,0.3);
+      transition: transform .3s, box-shadow .3s, background 0.5s;
     }
-    .feature:hover { transform:translateY(-10px); box-shadow:0 0 30px #66fcf1; }
-    .feature p { font-size:1rem; line-height:1.5; }
+    .feature:hover { transform:translateY(-10px); box-shadow:0 0 15px rgba(255,117,24,0.5); }
 
-    .tools { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding:20px; background:#0b0c10; }
+    .tools { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; padding:20px; background:#1a0000; transition: background 0.5s; }
     .tool {
-      min-width:200px; margin:10px; padding:20px; background:#1f2833; border-radius:10px;
-      text-align:center; scroll-snap-align:start; transition:transform .3s;
+      min-width:200px; margin:10px; padding:20px; background:#330000; border-radius:10px;
+      text-align:center; scroll-snap-align:start; transition:transform .3s, background 0.5s;
     }
-    .tool:hover { transform:scale(1.1); }
-    .tool h3 { color:#45a29e; margin-bottom:10px; }
+    .tool:hover { transform:scale(1.05); }
 
     .terminal {
-      background:#1f2833; border-radius:12px; padding:30px;
-      font-family: monospace; color:#66fcf1; max-width:800px; margin:40px auto;
-      overflow-x:auto;
+      background:#330000; border-radius:12px; padding:30px;
+      font-family: monospace; color:#ff7518; max-width:800px; margin:40px auto;
+      overflow-x:auto; transition: background 0.5s, color 0.5s;
     }
 
-    footer { text-align:center; padding:40px 20px; background:#0b0c10; font-size:.9rem; color:#c5c6c7; }
+    footer { text-align:center; padding:40px 20px; background:#1a0000; font-size:.9rem; color:#ff7518; transition: background 0.5s, color 0.5s; }
+
+    /* Subtle Neon Orange Letters */
+    .neon-orange {
+      color: #ff7518;
+      text-shadow: 0 0 3px #ff7518, 0 0 6px #ff7518;
+      display: inline-block;
+    }
+
+    /* Neon Buttons */
+    .btn {
+      padding: 15px 40px;
+      border: 2px solid #ff7518;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #ff7518;
+      background: transparent;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      box-shadow: 0 0 5px rgba(255,117,24,0.5), 0 0 10px rgba(255,117,24,0.5);
+      margin: 5px;
+    }
+    .btn:hover {
+      color: #1a0000;
+      background: #ff7518;
+      box-shadow: 0 0 10px rgba(255,117,24,0.5), 0 0 20px rgba(255,117,24,0.5);
+    }
+
+    /* Spooky Mode Styles */
+    body.spooky { background:#1a0000; color:#ff7518; }
+    header.spooky { background: radial-gradient(circle at top left, #1a0000, #330000); }
+    .features.spooky { background:#330000; }
+    .tools.spooky { background:#1a0000; }
+    .feature.spooky, .tool.spooky, .terminal.spooky, footer.spooky {
+      background:#330000; color:#ff7518; box-shadow:0 0 10px rgba(255,117,24,0.3);
+    }
   </style>
 </head>
-<body>
+<body class="spooky">
 
-  <!-- Hero Section -->
-  <header>
+  <header class="spooky">
     <div class="ascii-dragon">⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢰⣿⡿⠗⠀⠠⠄⡀⠀⠀⠀⠀  
 ⠀⠀⠀⠀⡜⠁⠀⠀⠀⠀⠀⠈⠑⢶⣶⡄ 
@@ -84,22 +109,21 @@
     <h1>PandochkaOS</h1>
     <p>Lightweight Kali-based pentesting OS with Fern WiFi Cracker, Metasploit, Hping3, and a fully customizable GUI.</p>
 
-    <!-- Direct Internet Archive Download Button -->
-    <a class="btn" href="https://archive.org/download/pandochkaOS/pandochkaOS.iso" download>PandochkaOS ISO Download</a>
+    <!-- Buttons -->
+    <a class="btn" href="https://archive.org/download/pandochkaOS/pandochkaOS.iso" download>PandochkaOS ISO</a>
+    <button class="btn" id="spookyBtn">Toggle Spooky Mode</button>
   </header>
 
-  <!-- Features -->
-  <section class="features">
+  <section class="features spooky">
     <h2>Features</h2>
-    <div class="feature"><h3>Lightweight</h3><p>Optimized for speed and efficiency while packing essential pentesting tools.</p></div>
-    <div class="feature"><h3>Customizable</h3><p>Change wallpapers, icons, themes, and even ASCII dragons!</p></div>
-    <div class="feature"><h3>Powerful Tools</h3><p>Fern WiFi Cracker, Metasploit Framework, Hping3, and more.</p></div>
+    <div class="feature spooky"><h3>Lightweight</h3><p>Optimized for speed and efficiency while packing essential pentesting tools.</p></div>
+    <div class="feature spooky"><h3>Customizable</h3><p>Change wallpapers, icons, themes, and even ASCII dragons!</p></div>
+    <div class="feature spooky"><h3>Powerful Tools</h3><p>Fern WiFi Cracker, Metasploit Framework, Hping3, and more.</p></div>
   </section>
 
-  <!-- Tool Carousel -->
   <section>
     <h2>Included Tools</h2>
-    <div class="tools">
+    <div class="tools spooky">
       <div class="tool"><h3>Fern WiFi Cracker</h3></div>
       <div class="tool"><h3>Metasploit</h3></div>
       <div class="tool"><h3>Hping3</h3></div>
@@ -107,23 +131,33 @@
       <div class="tool"><h3>Netcat</h3></div>
       <div class="tool"><h3>Wireshark</h3></div>
       <div class="tool"><h3>Aircrack-ng</h3></div>
-      <div class="tool"><h3>John the Ripper</h3></div>
     </div>
   </section>
 
-  <!-- Terminal-style ASCII -->
   <section>
     <h2>Welcome Terminal</h2>
-    <div class="terminal" id="terminal"></div>
+    <div class="terminal spooky" id="terminal"></div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <footer class="spooky">
     &copy; 2025 PandochkaOS | Made with ❤️ by the PandochkaOS Team | 
     <a href="#">GitHub</a> | <a href="#">Discord</a>
   </footer>
 
   <script>
+    // Neonize text letters (subtle glow)
+    function neonizeText(selector) {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        const text = el.textContent;
+        el.innerHTML = text.split('').map(char => {
+          if(char === ' ') return ' ';
+          return `<span class="neon-orange">${char}</span>`;
+        }).join('');
+      });
+    }
+    neonizeText('h1, h2, h3, p, .btn');
+
     // ASCII Terminal Animation
     const terminal = document.getElementById('terminal');
     const messages = [
@@ -159,6 +193,13 @@
       tools.scrollTo({ left: scrollAmount, behavior: 'smooth' });
     }
     setInterval(autoScroll, 50);
+
+    // Spooky Mode Toggle
+    const spookyBtn = document.getElementById('spookyBtn');
+    spookyBtn.addEventListener('click', () => {
+      document.body.classList.toggle('spooky');
+      document.querySelectorAll('.spooky').forEach(el => el.classList.toggle('spooky'));
+    });
   </script>
 
 </body>
